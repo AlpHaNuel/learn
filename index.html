@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>The Wardrobe Walk – EP: #WearUyo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -82,5 +82,50 @@
       <a href="#">Contact</a>
     </div>
   </footer>
+  <!-- Floating Chatbot -->
+<div id="floating-chatbot">
+  <div id="chat-header">👕 Wardrobe AI</div>
+  <div id="chat-output"></div>
+  <input type="text" id="chat-input" placeholder="Say hi or ask about your fit..." onkeypress="handleKey(event)" />
+</div>
+
+<script>
+  const responses = {
+    greetings: [
+      "Hi there! Welcome to The Wardrobe Walk.",
+      "Hey! How can I help you today?",
+      "Hello! Ready to #WearUyo?",
+      "Welcome! Ask me for a fit recommendation."
+    ],
+    outfits: [
+      "Try the #WEARUYO bomber jacket for a night out.",
+      "Go with the oversized graffiti tee for chill vibes.",
+      "Need something bold? Check out our jean jacket.",
+      "Try the joggers + long sleeve set for that runway look."
+    ]
+  };
+
+  function handleKey(event) {
+    if (event.key === "Enter") {
+      const input = document.getElementById("chat-input");
+      const output = document.getElementById("chat-output");
+      const userMsg = input.value.trim();
+      if (!userMsg) return;
+
+      let botMsg = "I’m not sure what you mean. Try asking about an outfit!";
+
+      if (/\bhi\b|\bhello\b|\bhey\b/i.test(userMsg)) {
+        botMsg = responses.greetings[Math.floor(Math.random() * responses.greetings.length)];
+      } else if (/outfit|fit|recommend|wear|clothes|wardrobe|suggest/i.test(userMsg)) {
+        botMsg = responses.outfits[Math.floor(Math.random() * responses.outfits.length)];
+      }
+
+      output.innerHTML += `<div><strong>You:</strong> ${userMsg}</div>`;
+      output.innerHTML += `<div><strong>Wardrobe Bot:</strong> ${botMsg}</div>`;
+      input.value = "";
+      output.scrollTop = output.scrollHeight;
+    }
+  }
+</script>
 </body>
 </html>
