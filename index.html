@@ -82,44 +82,75 @@
       <a href="#">Contact</a>
     </div>
   </footer>
- <!-- Floating OpenAI Chatbot -->
+
+<!-- Floating Wardrobe AI Chatbot -->
 <div id="floating-chatbot">
-  <div id="chat-header">👕 Wardrobe AI</div>
+  <div id="chat-header">👗 Wardrobe AI</div>
   <div id="chat-output"></div>
-  <input type="text" id="chat-input" placeholder="Ask me about style..." onkeypress="handleAIKey(event)" />
+  <div id="chat-form">
+    <input type="text" id="chat-input" placeholder="Ask me for outfit ideas..." />
+    <button id="chat-send">➤</button>
+  </div>
 </div>
 
 <script>
-  const chatInput = document.getElementById('chat-input');
-  const chatOutput = document.getElementById('chat-output');
+  const input = document.getElementById("chat-input");
+  const output = document.getElementById("chat-output");
+  const sendBtn = document.getElementById("chat-send");
 
-  chatInput.addEventListener('keydown', async function (e) {
-    if (e.key === 'Enter') {
-      const userInput = chatInput.value.trim();
-      if (!userInput) return;
+  // Example of live inventory data — you can replace or expand dynamically later
+  const inventory = [
+    { name: "Oversized Tee & Joggers", tags: ["casual","urban"] },
+    { name: "Linen Blazer Combo", tags: ["smart","smart casual"] },
+    { name: "Floral Dress", tags: ["female","event"] },
+    { name: "Techwear Jacket", tags: ["urban","street"] }
+  ];
 
-      // Display user message
-      chatOutput.innerHTML += `<div><strong>You:</strong> ${userInput}</div>`;
-      chatInput.value = '';
+  function getSmartReply(msg) {
+    const text = msg.toLowerCase();
+    let replies = [];
 
-      // Simulated smart reply
-      let response = '';
-
-      if (/hello|hi|hey/i.test(userInput)) {
-        response = "Hey there! 👋 Looking for something comfy or stylish today?";
-      } else if (/recommend|wear|outfit/i.test(userInput)) {
-        response = "Based on your vibe, how about our latest oversized tee and jeans combo? 💅";
-      } else {
-        response = "Hmm... I'm still learning! Try asking me for outfit ideas or say hello 😎";
-      }
-
-      // Display AI response
-      setTimeout(() => {
-        chatOutput.innerHTML += `<div><strong>AI:</strong> ${response}</div>`;
-        chatOutput.scrollTop = chatOutput.scrollHeight;
-      }, 500);
+    if (/(hi|hello|hey)/i.test(text)) {
+      return "Hey there! 👋 What kind of look are you going for today?";
     }
-  });
+
+    inventory.forEach(item => {
+      item.tags.forEach(tag => {
+        if (text.includes(tag)) replies.push(item);
+      });
+    });
+
+    if (replies.length) {
+      let reply = "How about:\n";
+      replies.forEach(i => reply += `• ${i.name}\n`);
+      return reply;
+    }
+
+    if (/(suggest|recommend|outfit|wear)/i.test(text)) {
+      const random = inventory[Math.floor(Math.random()*inventory.length)];
+      return `You might like this: ${random.name}`;
+    }
+
+    return "Tell me more — for example, you could say 'casual look' or 'smart outfit'.";
+  }
+
+  function sendMessage() {
+    const msg = input.value.trim();
+    if (!msg) return;
+
+    output.innerHTML += `<div><strong>You:</strong> ${msg}</div>`;
+    input.value = "";
+    const reply = getSmartReply(msg);
+
+    setTimeout(() => {
+      output.innerHTML += `<div><strong>AI:</strong> ${reply.replace(/\n/g,'<br>')}</div>`;
+      output.scrollTop = output.scrollHeight;
+    }, 300);
+  }
+
+  sendBtn.addEventListener("click", sendMessage);
+  input.addEventListener("keypress", e => { if (e.key === "Enter") sendMessage(); });
 </script>
+
 </body>
 </html>
