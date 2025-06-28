@@ -82,50 +82,44 @@
       <a href="#">Contact</a>
     </div>
   </footer>
-  <!-- Floating Chatbot -->
+ <!-- Floating OpenAI Chatbot -->
 <div id="floating-chatbot">
   <div id="chat-header">👕 Wardrobe AI</div>
   <div id="chat-output"></div>
-  <input type="text" id="chat-input" placeholder="Say hi or ask about your fit..." onkeypress="handleKey(event)" />
+  <input type="text" id="chat-input" placeholder="Ask me about style..." onkeypress="handleAIKey(event)" />
 </div>
 
 <script>
-  const responses = {
-    greetings: [
-      "Hi there! Welcome to The Wardrobe Walk.",
-      "Hey! How can I help you today?",
-      "Hello! Ready to #WearUyo?",
-      "Welcome! Ask me for a fit recommendation."
-    ],
-    outfits: [
-      "Try the #WEARUYO bomber jacket for a night out.",
-      "Go with the oversized graffiti tee for chill vibes.",
-      "Need something bold? Check out our jean jacket.",
-      "Try the joggers + long sleeve set for that runway look."
-    ]
-  };
+  const chatInput = document.getElementById('chat-input');
+  const chatOutput = document.getElementById('chat-output');
 
-  function handleKey(event) {
-    if (event.key === "Enter") {
-      const input = document.getElementById("chat-input");
-      const output = document.getElementById("chat-output");
-      const userMsg = input.value.trim();
-      if (!userMsg) return;
+  chatInput.addEventListener('keydown', async function (e) {
+    if (e.key === 'Enter') {
+      const userInput = chatInput.value.trim();
+      if (!userInput) return;
 
-      let botMsg = "I’m not sure what you mean. Try asking about an outfit!";
+      // Display user message
+      chatOutput.innerHTML += `<div><strong>You:</strong> ${userInput}</div>`;
+      chatInput.value = '';
 
-      if (/\bhi\b|\bhello\b|\bhey\b/i.test(userMsg)) {
-        botMsg = responses.greetings[Math.floor(Math.random() * responses.greetings.length)];
-      } else if (/outfit|fit|recommend|wear|clothes|wardrobe|suggest/i.test(userMsg)) {
-        botMsg = responses.outfits[Math.floor(Math.random() * responses.outfits.length)];
+      // Simulated smart reply
+      let response = '';
+
+      if (/hello|hi|hey/i.test(userInput)) {
+        response = "Hey there! 👋 Looking for something comfy or stylish today?";
+      } else if (/recommend|wear|outfit/i.test(userInput)) {
+        response = "Based on your vibe, how about our latest oversized tee and jeans combo? 💅";
+      } else {
+        response = "Hmm... I'm still learning! Try asking me for outfit ideas or say hello 😎";
       }
 
-      output.innerHTML += `<div><strong>You:</strong> ${userMsg}</div>`;
-      output.innerHTML += `<div><strong>Wardrobe Bot:</strong> ${botMsg}</div>`;
-      input.value = "";
-      output.scrollTop = output.scrollHeight;
+      // Display AI response
+      setTimeout(() => {
+        chatOutput.innerHTML += `<div><strong>AI:</strong> ${response}</div>`;
+        chatOutput.scrollTop = chatOutput.scrollHeight;
+      }, 500);
     }
-  }
+  });
 </script>
 </body>
 </html>
