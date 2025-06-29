@@ -60,16 +60,7 @@ h2 { font-size: 2rem; text-align: center; margin-bottom: 2rem; }
 }
 
 
-.btn {
-  margin-top: 2rem;
-  padding: 0.75rem 2rem;
-  background: #111;
-  color: #fff;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 1rem;
-}
+
 
 .role-cards {
   display: grid;
@@ -84,20 +75,84 @@ h2 { font-size: 2rem; text-align: center; margin-bottom: 2rem; }
   text-align: left;
 }
 
-.lookbook {
+.lookbook h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 2rem;
+}
+
+.lookbook-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
 }
-.lookbook div {
-  height: 250px;
-  background: #ddd;
+
+.lookbook-item {
+  background: #fff;
+  border: 1px solid #ddd;
   border-radius: 1rem;
-  transition: transform 0.3s;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
-.lookbook div:hover {
-  transform: scale(1.05);
+
+.lookbook-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
+
+.lookbook-img {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.lookbook-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lookbook-item h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+
+.lookbook-item p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+.lookbook-item .price {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #111;
+  margin-bottom: 1rem;
+}
+
+.lookbook-item .btn {
+  padding: 0.6rem 1.5rem;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+}
+
+.lookbook-item .btn:hover {
+  background: #333;
+}
+
 
 .event-info { background: #111; color: #fff; }
 .event-grid {
@@ -195,4 +250,141 @@ footer a:hover {
   font-size: 1.2rem;
   color: #fff;
   padding: 0 0.5rem;
+}
+
+.why-choose {
+  background-color: #fff;
+  padding: 4rem 1.5rem;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.why-choose h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 1rem;
+}
+
+.why-choose .lead {
+  font-size: 1.1rem;
+  color: #444;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.feature {
+  background-color: #f9f7f3;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid #ddd;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.feature h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+
+.feature p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.intro-block {
+  background-color: #f9f7f3;
+  padding: 4rem 1.5rem;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.intro-block h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 1rem;
+}
+
+.intro-block .subheading {
+  font-size: 1.5rem;
+  color: #444;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.intro-block .description {
+  font-size: 1.1rem;
+  color: #333;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.intro-buttons {
+  margin-bottom: 1.5rem;
+}
+
+.intro-buttons .btn {
+  padding: 0.75rem 2rem;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.intro-buttons .btn:hover {
+  background: #f4c400;
+}
+
+.intro-buttons .btn-outline {
+  padding: 0.75rem 2rem;
+  background: transparent;
+  color: #111111;
+  border: 2px solid #111;
+  border-radius: 25px;
+  font-size: 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.intro-buttons .btn-outline:hover {
+  background: #111;
+  color: #fff;
+}
+
+.hashtags {
+  margin-top: 1rem;
+}
+
+.hashtags span {
+  display: inline-block;
+  margin: 0.3rem;
+  background: #e5e5e5;
+  color: #111;
+  padding: 0.4rem 1rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
 }
