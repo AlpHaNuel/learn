@@ -85,7 +85,10 @@
 
 <!-- Floating Wardrobe AI Chatbot -->
 <div id="floating-chatbot">
-  <div id="chat-header">👗 Wardrobe AI</div>
+<div id="chat-header">
+  Wardrobe AI
+  <span id="chat-close" onclick="clearChat()">×</span>
+</div>
   <div id="chat-output"></div>
   <div id="chat-form">
     <input type="text" id="chat-input" placeholder="Ask me for outfit ideas..." />
@@ -150,6 +153,11 @@
 
   sendBtn.addEventListener("click", sendMessage);
   input.addEventListener("keypress", e => { if (e.key === "Enter") sendMessage(); });
+
+  function clearChat() {
+    const chatOutput = document.getElementById('chat-output');
+    if (chatOutput) chatOutput.innerHTML = '';
+  }
 </script>
 
 </body>
