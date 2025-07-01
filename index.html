@@ -1,30 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Wardrobe Walk – EP: #WearUyo</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Wardrobe Walk – EP: #WearUyo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    #floating-chatbot {
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    #chat-output img {
+      max-width: 100%;
+      border-radius: 0.5rem;
+      margin-top: 0.5rem;
+    }
+  </style>
 </head>
-<section class="intro-block">
-  <h1>The Wardrobe Walk</h1>
-  <p class="subheading">Your Smart AI Stylist & Fashion Assistant</p>
-  <p class="description">
-    Discover personalized outfit recommendations powered by AI.
-    From casual looks to party outfits, we'll help you find the perfect style for any occasion.
-  </p>
-
-  <div class="intro-buttons">
-    <button class="btn">Start Styling</button>
-    <button class="btn-outline">Browse Collection</button>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="loader-text">The Wardrobe Walk...</div>
   </div>
 
-  <div class="hashtags">
-    <span>#WearUyo</span>
-    <span>#WardrobeWalk</span>
-    <span>AI Powered Style</span>
-  </div>
-</section>
+  <!-- Dark Mode Toggle -->
+  <div id="dark-toggle" onclick="toggleDarkMode()">🌙</div>
+  
+<main>
+  <section class="intro-block">
+    <h1>The Wardrobe Walk</h1>
+    <p class="subheading">Your Smart AI Stylist & Fashion Assistant</p>
+    <p class="description">
+      Discover personalized outfit recommendations powered by AI.
+      From casual looks to party outfits, we'll help you find the perfect style for any occasion.
+    </p>
+
+    <div class="intro-buttons">
+      <button class="btn">Start Styling</button>
+      <button class="btn-outline">Browse Collection</button>
+    </div>
+
+    <div class="hashtags">
+      <span>#WearUyo</span>
+      <span>#WardrobeWalk</span>
+      <span>AI Powered Style</span>
+    </div>
+  </section>
 
   <div class="hero-container">
     <div class="hero-overlay">
@@ -36,80 +58,141 @@
     </div>
   </div>
 
-
- <section class="lookbook">
-  <h2>The Lookbook</h2>
-  <div class="lookbook-grid">
-
+  <section class="lookbook">
+    <h2>The Lookbook</h2>
+    <div class="lookbook-grid">
+      
+    <!-- Item 1 -->
     <div class="lookbook-item">
       <div class="lookbook-img">
-        <img src="images/night-fit.jpg" alt="Urban Night Fit" />
+        <img src="images/oversized-tan.jpg" alt="Oversized tan T-shirt by Sito & Guy" />
       </div>
-      <h3>Urban Night Fit</h3>
-      <p>Street style for Uyo nights</p>
-      <p class="price">₦25,000</p>
+      <h3>Oversized Tan T-shirt</h3>
+      <p>Everyday comfort redefined</p>
+      <p class="designer-badge"><a href="#sito-guy">Sito & Guy</a></p>
+      <p class="price">₦18,000</p>
       <button class="btn">Pre-Order Now</button>
     </div>
 
+    <!-- Item 2 -->
     <div class="lookbook-item">
       <div class="lookbook-img">
-        <img src="images/boho-dress.jpg" alt="Bohemian Summer Dress" />
+        <img src="images/bomber-jacket.jpg" alt="Bomber Jacket by Roque" />
       </div>
-      <h3>Bohemian Summer Dress</h3>
-      <p>Light and flowy for tropical days</p>
-      <p class="price">₦15,000</p>
+      <h3>Bomber Jacket</h3>
+      <p>Statement piece with street edge</p>
+      <p class="designer-badge"><a href="#roque">Roque</a></p>
+      <p class="price">₦28,500</p>
       <button class="btn">Pre-Order Now</button>
     </div>
 
+    <!-- Item 3 -->
     <div class="lookbook-item">
       <div class="lookbook-img">
-        <img src="images/blazer-set.jpg" alt="Office Blazer Set" />
+        <img src="images/jean-jacket.jpg" alt="Jean Jacket by DJK Originals" />
       </div>
-      <h3>Office Blazer Set</h3>
-      <p>Boss lady energy</p>
-      <p class="price">₦22,000</p>
+      <h3>Jean Jacket</h3>
+      <p>Classic blue denim done right</p>
+      <p class="designer-badge"><a href="#djk-originals">DJK Originals</a></p>
+      <p class="price">₦21,000</p>
       <button class="btn">Pre-Order Now</button>
     </div>
 
-    <!-- You can duplicate this block for more items -->
+    <!-- Item 4 -->
+    <div class="lookbook-item">
+      <div class="lookbook-img">
+        <img src="images/leather-jacket.jpg" alt="Leather Jacket by Erryfits" />
+      </div>
+      <h3>Leather Jacket</h3>
+      <p>Bold, fitted, and fearless</p>
+      <p class="designer-badge"><a href="#erryfits">Erryfits</a></p>
+      <p class="price">₦35,000</p>
+      <button class="btn">Pre-Order Now</button>
+    </div>
 
-  </div>
-</section>
+    <!-- Item 5 -->
+    <div class="lookbook-item">
+      <div class="lookbook-img">
+        <img src="images/fro-futuristic.jpg" alt="Fro-Futuristic T-Shirt by Pvzzle" />
+      </div>
+      <h3>Fro-Futuristic T-Shirt</h3>
+      <p>Afro vibes meet next-gen techwear</p>
+      <p class="designer-badge"><a href="#pvzzle">Pvzzle</a></p>
+      <p class="price">₦23,000</p>
+      <button class="btn">Pre-Order Now</button>
+    </div>
 
-<!-- WHY CHOOSE WARDROBE WALK -->
-<section class="why-choose">
-  <h2>Why Choose The Wardrobe Walk?</h2>
-  <p class="lead">
-    Experience the future of fashion with our intelligent styling platform that makes looking great effortless and accessible.
-  </p>
+    <!-- Item 6 -->
+    <div class="lookbook-item">
+      <div class="lookbook-img">
+        <img src="images/premium-hoodie.jpg" alt="Premium Streetwear Hoodie by Wolf Pack" />
+      </div>
+      <h3>Premium Streetwear Hoodie</h3>
+      <p>For chill days and bold moods</p>
+      <p class="designer-badge"><a href="#wolf-pack">Wolf Pack</a></p>
+      <p class="price">₦27,500</p>
+      <button class="btn">Pre-Order Now</button>
+    </div>
 
-  <div class="features">
-    <div class="feature">
-      <h3>AI-Powered Styling</h3>
-      <p>Advanced AI understands your style and suggests perfect outfit combinations just for you.</p>
+    <!-- Item 7 -->
+    <div class="lookbook-item">
+      <div class="lookbook-img">
+        <img src="images/genz-streetwear.jpg" alt="Gen Z Streetwear by Muriel" />
+      </div>
+      <h3>Gen Z Streetwear</h3>
+      <p>Rebel cuts and remix culture</p>
+      <p class="designer-badge"><a href="#muriel">Muriel</a></p>
+      <p class="price">₦20,000</p>
+      <button class="btn">Pre-Order Now</button>
     </div>
-    <div class="feature">
-      <h3>Instant Recommendations</h3>
-      <p>Get real-time fashion advice and suggestions based on your mood or event.</p>
+
+    <!-- Item 8 -->
+    <div class="lookbook-item">
+      <div class="lookbook-img">
+        <img src="images/futuristic-wear.jpg" alt="Futuristic Look by MaMa PEACE Thrift" />
+      </div>
+      <h3>Futuristic</h3>
+      <p>Minimal cuts, maximum tech</p>
+      <p class="designer-badge"><a href="#mama-peace-thrift">MaMa PEACE Thrift</a></p>
+      <p class="price">₦30,000</p>
+      <button class="btn">Pre-Order Now</button>
     </div>
-    <div class="feature">
-      <h3>Personalized Experience</h3>
-      <p>Each recommendation is tailored to your body, taste, and lifestyle.</p>
     </div>
-    <div class="feature">
-      <h3>Quality Assured</h3>
-      <p>All products are curated for style, value, and durability.</p>
+  </section>
+
+  <section class="why-choose">
+    <h2>Why Choose The Wardrobe Walk?</h2>
+    <p class="lead">
+      Experience the future of fashion with our intelligent styling platform that makes looking great effortless and accessible.
+    </p>
+
+    <div class="features">
+      <div class="feature">
+        <h3>AI-Powered Styling</h3>
+        <p>Advanced AI understands your style and suggests perfect outfit combinations just for you.</p>
+      </div>
+      <div class="feature">
+        <h3>Instant Recommendations</h3>
+        <p>Get real-time fashion advice and suggestions based on your mood or event.</p>
+      </div>
+      <div class="feature">
+        <h3>Personalized Experience</h3>
+        <p>Each recommendation is tailored to your body, taste, and lifestyle.</p>
+      </div>
+      <div class="feature">
+        <h3>Quality Assured</h3>
+        <p>All products are curated for style, value, and durability.</p>
+      </div>
+      <div class="feature">
+        <h3>Mobile Friendly</h3>
+        <p>Shop and get styled easily on any device with our responsive platform.</p>
+      </div>
+      <div class="feature">
+        <h3>Community Driven</h3>
+        <p>Join the #WearUyo community and share your fashion journey.</p>
+      </div>
     </div>
-    <div class="feature">
-      <h3>Mobile Friendly</h3>
-      <p>Shop and get styled easily on any device with our responsive platform.</p>
-    </div>
-    <div class="feature">
-      <h3>Community Driven</h3>
-      <p>Join the #WearUyo community and share your fashion journey.</p>
-    </div>
-  </div>
-</section>
+  </section>
 
   <section>
     <h2>How do you walk with us?</h2>
@@ -136,7 +219,7 @@
       </div>
     </div>
   </section>
-  
+
   <section class="event-info">
     <h2>Event Info</h2>
     <div class="event-grid">
@@ -149,7 +232,9 @@
         <p>Uyo City Hall, Akwa Ibom</p>
       </div>
     </div>
-    <p style="text-align:center; margin-top: 2rem; font-style: italic;">Curated runway. Streetwear meets soul. Merch, moments, movement.</p>
+    <p style="text-align:center; margin-top: 2rem; font-style: italic;">
+      Curated runway. Streetwear meets soul. Merch, moments, movement.
+    </p>
   </section>
 
   <section>
@@ -159,92 +244,124 @@
       <button class="btn">Reserve Yours</button>
     </div>
   </section>
+</main>
 
-  <footer>
-    <p>© 2025 The Wardrobe Walk · Let the city wear your story</p>
-    <div>
-      <a href="#">Instagram</a>
-      <a href="#">TikTok</a>
-      <a href="#">Contact</a>
-    </div>
-  </footer>
-
-<!-- Floating Wardrobe AI Chatbot -->
-<div id="floating-chatbot">
-<div id="chat-header">
-  Wardrobe AI
-  <span id="chat-close" onclick="clearChat()">×</span>
-</div>
-  <div id="chat-output"></div>
-  <div id="chat-form">
-    <input type="text" id="chat-input" placeholder="Ask me for outfit ideas..." />
-    <button id="chat-send">➤</button>
+<footer>
+  <p>© 2025 The Wardrobe Walk · Let the city wear your story</p>
+  <div>
+    <a href="#">Instagram</a>
+    <a href="#">TikTok</a>
+    <a href="#">Contact</a>
   </div>
-</div>
+</footer>
 
-<script>
-  const input = document.getElementById("chat-input");
-  const output = document.getElementById("chat-output");
-  const sendBtn = document.getElementById("chat-send");
+  <!-- Floating Wardrobe AI Chatbot -->
+  <div id="floating-chatbot">
+    <div id="chat-header">
+      Wardrobe AI
+      <span id="chat-close" onclick="clearChat()">×</span>
+    </div>
+    <div id="chat-output"></div>
+    <div id="chat-form">
+      <input type="text" id="chat-input" placeholder="e.g. casual, party..." />
+      <button id="chat-send">➤</button>
+    </div>
+  </div>
 
-  // Example of live inventory data — you can replace or expand dynamically later
-  const inventory = [
-    { name: "Oversized Tee & Joggers", tags: ["casual","urban"] },
-    { name: "Linen Blazer Combo", tags: ["smart","smart casual"] },
-    { name: "Floral Dress", tags: ["female","event"] },
-    { name: "Techwear Jacket", tags: ["urban","street"] }
-  ];
+  <script>
+    const input = document.getElementById("chat-input");
+    const output = document.getElementById("chat-output");
+    const sendBtn = document.getElementById("chat-send");
 
-  function getSmartReply(msg) {
-    const text = msg.toLowerCase();
-    let replies = [];
+    const lookbook = [
+      {
+        name: "Oversized Tan T-shirt",
+        designer: "Sito & Guy",
+        price: "₦18,000",
+        image: "images/oversized-tan.jpg",
+        tags: ["casual"]
+      },
+      {
+        name: "Bomber Jacket",
+        designer: "Roque",
+        price: "₦28,500",
+        image: "images/bomber-jacket.jpg",
+        tags: ["party", "street"]
+      },
+      {
+        name: "Jean Jacket",
+        designer: "DJK Originals",
+        price: "₦21,000",
+        image: "images/jean-jacket.jpg",
+        tags: ["casual"]
+      },
+      {
+        name: "Leather Jacket",
+        designer: "Erryfits",
+        price: "₦35,000",
+        image: "images/leather-jacket.jpg",
+        tags: ["party"]
+      },
+      {
+        name: "Fro-Futuristic T-Shirt",
+        designer: "Pvzzle",
+        price: "₦23,000",
+        image: "images/fro-futuristic.jpg",
+        tags: ["urban"]
+      }
+    ];
 
-    if (/(hi|hello|hey)/i.test(text)) {
-      return "Hey there! 👋 What kind of look are you going for today?";
+    function getSmartReply(msg) {
+      const text = msg.toLowerCase();
+      const matched = lookbook.filter(item => item.tags.some(tag => text.includes(tag)));
+      if (matched.length > 0) {
+        return matched.map(item => `
+          <div class="chat-card">
+            <img src="${item.image}" alt="${item.name}" />
+            <p><strong>${item.name}</strong><br>
+            <small>by ${item.designer} – ${item.price}</small></p>
+            <button class="btn">Buy Now</button>
+          </div>
+        `).join('');
+      }
+      return "Try words like 'casual', 'party', or 'urban' to see outfit ideas!";
     }
 
-    inventory.forEach(item => {
-      item.tags.forEach(tag => {
-        if (text.includes(tag)) replies.push(item);
-      });
+    function sendMessage() {
+      const msg = input.value.trim();
+      if (!msg) return;
+
+      output.innerHTML += `<div><strong>You:</strong> ${msg}</div>`;
+      input.value = "";
+      const reply = getSmartReply(msg);
+
+      setTimeout(() => {
+        output.innerHTML += `<div><strong>AI:</strong><br>${reply}</div>`;
+        output.scrollTop = output.scrollHeight;
+      }, 300);
+    }
+
+    sendBtn.addEventListener("click", sendMessage);
+    input.addEventListener("keypress", e => { if (e.key === "Enter") sendMessage(); });
+
+    function clearChat() {
+      output.innerHTML = '';
+    }
+  </script>
+
+  <script>
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("preloader");
+      if (loader) {
+        loader.style.opacity = "0";
+        loader.style.visibility = "hidden";
+        setTimeout(() => loader.remove(), 500);
+      }
     });
 
-    if (replies.length) {
-      let reply = "How about:\n";
-      replies.forEach(i => reply += `• ${i.name}\n`);
-      return reply;
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
     }
-
-    if (/(suggest|recommend|outfit|wear)/i.test(text)) {
-      const random = inventory[Math.floor(Math.random()*inventory.length)];
-      return `You might like this: ${random.name}`;
-    }
-
-    return "Tell me more — for example, you could say 'casual look' or 'smart outfit'.";
-  }
-
-  function sendMessage() {
-    const msg = input.value.trim();
-    if (!msg) return;
-
-    output.innerHTML += `<div><strong>You:</strong> ${msg}</div>`;
-    input.value = "";
-    const reply = getSmartReply(msg);
-
-    setTimeout(() => {
-      output.innerHTML += `<div><strong>AI:</strong> ${reply.replace(/\n/g,'<br>')}</div>`;
-      output.scrollTop = output.scrollHeight;
-    }, 300);
-  }
-
-  sendBtn.addEventListener("click", sendMessage);
-  input.addEventListener("keypress", e => { if (e.key === "Enter") sendMessage(); });
-
-  function clearChat() {
-    const chatOutput = document.getElementById('chat-output');
-    if (chatOutput) chatOutput.innerHTML = '';
-  }
-</script>
-
+  </script>
 </body>
 </html>
