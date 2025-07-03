@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
+    /* Chatbot Styling */
     #floating-chatbot {
       max-height: 400px;
       overflow-y: auto;
@@ -19,28 +20,28 @@
   </style>
 </head>
 <body>
-  <!-- Preloader -->
+
+  <!-- Preloader Section -->
   <div id="preloader">
     <div class="loader-text">The Wardrobe Walk...</div>
   </div>
 
-  <!-- Dark Mode Toggle -->
+  <!-- Dark Mode Toggle Button -->
   <div id="dark-toggle" onclick="toggleDarkMode()">🌙</div>
-  
+
 <main>
+  <!-- Intro Block Section -->
   <section class="intro-block">
     <h1>The Wardrobe Walk</h1>
     <p class="subheading">Your Smart AI Stylist & Fashion Assistant</p>
     <p class="description">
       Discover personalized outfit recommendations powered by AI.
       From casual looks to party outfits, we'll help you find the perfect style for any occasion.
-    </p>
-
+    </p> 
     <div class="intro-buttons">
       <button class="btn">Start Styling</button>
       <button class="btn-outline">Browse Collection</button>
-    </div>
-
+    </div> 
     <div class="hashtags">
       <span>#WearUyo</span>
       <span>#WardrobeWalk</span>
@@ -48,6 +49,7 @@
     </div>
   </section>
 
+  <!-- Hero Section -->
   <div class="hero-container">
     <div class="hero-overlay">
       <section class="hero">
@@ -58,33 +60,34 @@
     </div>
   </div>
 
+  <!-- Lookbook Section -->
   <section class="lookbook">
     <h2>The Lookbook</h2>
     <div class="lookbook-grid">
-      
-    <!-- Item 1 -->
-    <div class="lookbook-item">
-      <div class="lookbook-img">
-        <img src="images/oversized-tan.jpg" alt="Oversized tan T-shirt by Sito & Guy" />
-      </div>
-      <h3>Oversized Tan T-shirt</h3>
-      <p>Everyday comfort redefined</p>
-      <p class="designer-badge"><a href="#sito-guy">Sito & Guy</a></p>
-      <p class="price">₦18,000</p>
-      <button class="btn">Pre-Order Now</button>
-    </div>
 
-    <!-- Item 2 -->
-    <div class="lookbook-item">
-      <div class="lookbook-img">
-        <img src="images/bomber-jacket.jpg" alt="Bomber Jacket by Roque" />
+      <!-- Lookbook Item 1 -->
+      <div class="lookbook-item">
+        <div class="lookbook-img">
+          <img src="images/oversized-tan.jpg" alt="Oversized tan T-shirt by Sito & Guy" />
+        </div>
+        <h3>Oversized Tan T-shirt</h3>
+        <p>Everyday comfort redefined</p>
+        <p class="designer-badge"><a href="#sito-guy">Sito & Guy</a></p>
+        <p class="price">₦18,000</p>
+        <button class="btn">Pre-Order Now</button>
       </div>
-      <h3>Bomber Jacket</h3>
-      <p>Statement piece with street edge</p>
-      <p class="designer-badge"><a href="#roque">Roque</a></p>
-      <p class="price">₦28,500</p>
-      <button class="btn">Pre-Order Now</button>
-    </div>
+
+      <!-- Item 2: -->
+      <div class="lookbook-item">
+        <div class="lookbook-img">
+          <img src="images/bomber-jacket.jpg" alt="Bomber Jacket by Roque" />
+        </div>
+        <h3>Bomber Jacket</h3>
+        <p>Statement piece with street edge</p>
+        <p class="designer-badge"><a href="#roque">Roque</a></p>
+        <p class="price">₦28,500</p>
+        <button class="btn">Pre-Order Now</button>
+      </div>
 
     <!-- Item 3 -->
     <div class="lookbook-item">
@@ -220,42 +223,45 @@
     </div>
   </section>
 
-  <section class="event-info">
-    <h2>Event Info</h2>
-    <div class="event-grid">
-      <div>
-        <h3>Date & Time</h3>
-        <p>August 23, 2025 · 5:00 PM – 9:30 PM</p>
+ <!-- Event Information -->
+    <section class="event-info">
+      <h2>Event Info</h2>
+      <div class="event-grid">
+        <div>
+          <h3>Date & Time</h3>
+          <p>August 23, 2025 · 5:00 PM – 9:30 PM</p>
+        </div>
+        <div>
+          <h3>Location</h3>
+          <p>Uyo City Hall, Akwa Ibom</p>
+        </div>
       </div>
-      <div>
-        <h3>Location</h3>
-        <p>Uyo City Hall, Akwa Ibom</p>
+      <p style="text-align:center; margin-top: 2rem; font-style: italic;">
+        Curated runway. Streetwear meets soul. Merch, moments, movement.
+      </p>
+    </section>
+
+    <!-- Merch and Invite Section -->
+    <section>
+      <h2>Merch & Invite</h2>
+      <div class="merch">
+        <div class="merch-box"></div>
+        <button class="btn">Reserve Yours</button>
       </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>© 2025 The Wardrobe Walk · Let the city wear your story</p>
+    <div>
+      <a href="#">Instagram</a>
+      <a href="#">TikTok</a>
+      <a href="#">Contact</a>
     </div>
-    <p style="text-align:center; margin-top: 2rem; font-style: italic;">
-      Curated runway. Streetwear meets soul. Merch, moments, movement.
-    </p>
-  </section>
+  </footer>
 
-  <section>
-    <h2>Merch & Invite</h2>
-    <div class="merch">
-      <div class="merch-box"></div>
-      <button class="btn">Reserve Yours</button>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <p>© 2025 The Wardrobe Walk · Let the city wear your story</p>
-  <div>
-    <a href="#">Instagram</a>
-    <a href="#">TikTok</a>
-    <a href="#">Contact</a>
-  </div>
-</footer>
-
-  <!-- Floating Wardrobe AI Chatbot -->
+  <!-- Floating Chatbot (Wardrobe AI Assistant) -->
   <div id="floating-chatbot">
     <div id="chat-header">
       Wardrobe AI
@@ -264,53 +270,25 @@
     <div id="chat-output"></div>
     <div id="chat-form">
       <input type="text" id="chat-input" placeholder="e.g. casual, party..." />
-      <button id="chat-send">➤</button>
+      <button id="chat-send">➔</button>
     </div>
   </div>
 
+  <!-- Chatbot Script -->
   <script>
+    // Basic chatbot with smart tag-based recommendations
     const input = document.getElementById("chat-input");
     const output = document.getElementById("chat-output");
     const sendBtn = document.getElementById("chat-send");
 
+    // Lookbook sample for demo purposes
     const lookbook = [
-      {
-        name: "Oversized Tan T-shirt",
-        designer: "Sito & Guy",
-        price: "₦18,000",
-        image: "images/oversized-tan.jpg",
-        tags: ["casual"]
-      },
-      {
-        name: "Bomber Jacket",
-        designer: "Roque",
-        price: "₦28,500",
-        image: "images/bomber-jacket.jpg",
-        tags: ["party", "street"]
-      },
-      {
-        name: "Jean Jacket",
-        designer: "DJK Originals",
-        price: "₦21,000",
-        image: "images/jean-jacket.jpg",
-        tags: ["casual"]
-      },
-      {
-        name: "Leather Jacket",
-        designer: "Erryfits",
-        price: "₦35,000",
-        image: "images/leather-jacket.jpg",
-        tags: ["party"]
-      },
-      {
-        name: "Fro-Futuristic T-Shirt",
-        designer: "Pvzzle",
-        price: "₦23,000",
-        image: "images/fro-futuristic.jpg",
-        tags: ["urban"]
-      }
+      { name: "Oversized Tan T-shirt", designer: "Sito & Guy", price: "₦18,000", image: "images/oversized-tan.jpg", tags: ["casual"] },
+      { name: "Bomber Jacket", designer: "Roque", price: "₦28,500", image: "images/bomber-jacket.jpg", tags: ["party", "street"] },
+      { name: "Jean Jacket", designer: "DJK Originals", price: "₦21,000", image: "images/jean-jacket.jpg", tags: ["casual"] }
     ];
 
+    // Respond with outfits based on tags in input message
     function getSmartReply(msg) {
       const text = msg.toLowerCase();
       const matched = lookbook.filter(item => item.tags.some(tag => text.includes(tag)));
@@ -327,14 +305,13 @@
       return "Try words like 'casual', 'party', or 'urban' to see outfit ideas!";
     }
 
+    // Send message and receive AI reply
     function sendMessage() {
       const msg = input.value.trim();
-      if (!msg) return;
-
+      if (!msg) return; 
       output.innerHTML += `<div><strong>You:</strong> ${msg}</div>`;
       input.value = "";
-      const reply = getSmartReply(msg);
-
+      const reply = getSmartReply(msg); 
       setTimeout(() => {
         output.innerHTML += `<div><strong>AI:</strong><br>${reply}</div>`;
         output.scrollTop = output.scrollHeight;
@@ -344,12 +321,15 @@
     sendBtn.addEventListener("click", sendMessage);
     input.addEventListener("keypress", e => { if (e.key === "Enter") sendMessage(); });
 
+    // Clear chat content
     function clearChat() {
       output.innerHTML = '';
     }
   </script>
 
+  <!-- Preloader Fade Out and Dark Mode Toggle -->
   <script>
+    // Remove preloader after page loads
     window.addEventListener("load", () => {
       const loader = document.getElementById("preloader");
       if (loader) {
@@ -359,9 +339,11 @@
       }
     });
 
+    // Toggle between light and dark mode
     function toggleDarkMode() {
       document.body.classList.toggle("dark-mode");
     }
   </script>
+
 </body>
 </html>
